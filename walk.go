@@ -60,7 +60,7 @@ func (b *Box) walk(path string, info os.FileInfo, walkFn filepath.WalkFunc) erro
 
 	for _, name := range names {
 
-		filename := filepath.Join(path, name)
+		filename := filepath.ToSlash(filepath.Join(path, name))
 		fileObject, err := b.Open(filename)
 		if err != nil {
 			return err
